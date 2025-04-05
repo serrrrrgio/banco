@@ -155,6 +155,26 @@ public class Banco {
                 .orElse(null);
     }
 
+
+    /**
+     * Permite buscar la billetera de un usuario
+     * @param id identificación del usuario
+     * @param password identificación del usuario
+     * @return Usuario Verificado o null si no existe
+     */
+
+    public Usuario iniciarSesion(String id, String password) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId().equals(id) && usuario.getPassword().equals(password)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+
+
+
     /**
      * Permite buscar un usuario por su id
      * @param id id del usuario
