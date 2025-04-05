@@ -8,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -15,6 +18,20 @@ import javafx.stage.Stage;
  * @author caflorezvi
  */
 public class LoginControlador {
+
+    @FXML
+    private Button btnIniciarSesion;
+
+    @FXML
+    private TextField txtId;
+
+    @FXML
+    private PasswordField txtPassword;
+
+    ///@FXML
+    ///void iniciarSesion(ActionEvent event) {
+
+    ///}
 
     private final Banco banco;
 
@@ -37,7 +54,7 @@ public class LoginControlador {
                 PanelClienteControlador controlador = loader.getController();
                 controlador.setUsuario(usuario);
 
-                Stage stage = (Stage) txtUsuario.getScene().getWindow();
+                Stage stage = (Stage) txtId.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
 

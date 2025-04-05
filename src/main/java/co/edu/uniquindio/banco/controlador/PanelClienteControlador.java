@@ -10,7 +10,7 @@ public class PanelClienteControlador {
 
     private Usuario usuario;
 
-    public void setCliente(Usuario usaurio) {
+    public void setUsuario(Usuario usaurio) {
         this.usuario = usuario;
     }
 
