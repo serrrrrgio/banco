@@ -27,7 +27,7 @@ public class LoginControlador {
         String id = txtId.getText();
         String password = txtPassword.getText();
 
-        Usuario cliente = banco.iniciarSesion(id, password);
+        Usuario usuario = banco.iniciarSesion(id, password);
 
         if (usuario != null) {
             try {
