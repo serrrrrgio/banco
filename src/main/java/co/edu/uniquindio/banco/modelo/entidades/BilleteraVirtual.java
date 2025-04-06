@@ -2,9 +2,13 @@ package co.edu.uniquindio.banco.modelo.entidades;
 
 import co.edu.uniquindio.banco.config.Constantes;
 import co.edu.uniquindio.banco.modelo.vo.PorcentajeGastosIngresos;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
+@Getter
+@Setter
 public class BilleteraVirtual {
     private String numero;
     private float saldo;
