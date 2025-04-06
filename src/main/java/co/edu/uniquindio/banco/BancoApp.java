@@ -5,13 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import co.edu.uniquindio.banco.modelo.entidades.Banco;
 
-/**
- * Clase que representa la aplicación de un banco y que se encarga
- * de cargar la ventana principal de la aplicación.
- * @author caflorezvi
- */
+
 public class BancoApp extends Application {
+
+    Banco banco = Banco.getInstance();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -29,4 +28,6 @@ public class BancoApp extends Application {
     public static void main(String[] args) {
         launch(BancoApp.class, args);
     }
+
+    
 }

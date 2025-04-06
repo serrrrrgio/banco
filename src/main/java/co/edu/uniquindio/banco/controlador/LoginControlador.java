@@ -33,10 +33,12 @@ public class LoginControlador {
 
     ///}
 
-    private final Banco banco;
+    private Banco banco;
+
+    
 
     public LoginControlador(){
-        banco = new Banco();
+        Banco banco = Banco.getInstance();
     }
 
     @FXML

@@ -25,13 +25,16 @@ public class RegistroControlador {
     @FXML
     private PasswordField txtPassword;
 
-    private final Banco banco;
-
     /**
      * Constructor de la clase, inicializa el banco
      */
+
+     private Banco banco;
+
     public RegistroControlador(){
-        banco = new Banco();
+
+
+        Banco banco = Banco.getInstance();
     }
 
     /**
