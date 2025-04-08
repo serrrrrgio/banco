@@ -1,5 +1,6 @@
 package co.edu.uniquindio.banco;
 
+import co.edu.uniquindio.banco.modelo.Singleton.BancoSingleton;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,7 @@ import co.edu.uniquindio.banco.modelo.entidades.Banco;
 
 public class BancoApp extends Application {
 
-    Banco banco = Banco.getInstance();
+    Banco banco = BancoSingleton.getBanco();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -29,5 +30,5 @@ public class BancoApp extends Application {
         launch(BancoApp.class, args);
     }
 
-    
+
 }

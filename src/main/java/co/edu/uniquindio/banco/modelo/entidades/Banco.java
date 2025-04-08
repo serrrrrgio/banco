@@ -24,21 +24,12 @@ import java.util.UUID;
 
 public class Banco {
 
-    private static Banco instancia;
-
     private List<Usuario> usuarios;
     private List<BilleteraVirtual> billeteras;
 
-    private Banco(){
+    public Banco() {
         this.usuarios = new ArrayList<>();
         this.billeteras = new ArrayList<>();
-    }
-
-    public static Banco getInstance() {
-        if (instancia == null) {
-            instancia = new Banco();
-        }
-        return instancia;
     }
 
     /**
@@ -214,6 +205,13 @@ public class Banco {
 
         if(!billeteraOrigen.tieneSaldo(monto)){
             throw new Exception("Saldo insuficiente");
+        }
+        if (numeroBilleteraOrigen.equals(numeroBilleteraDestino)) {
+            throw new Exception("No puedes transferirte dinero a ti mismo.");
+        }
+
+        if (monto <= 0) {
+            throw new Exception("El monto debe ser mayor a cero.");
         }
 
         Transaccion transaccion = new Transaccion(

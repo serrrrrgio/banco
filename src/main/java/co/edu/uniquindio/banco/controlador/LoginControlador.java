@@ -1,5 +1,7 @@
 package co.edu.uniquindio.banco.controlador;
 
+import co.edu.uniquindio.banco.modelo.Singleton.BancoSingleton;
+import co.edu.uniquindio.banco.modelo.Singleton.Sesion;
 import co.edu.uniquindio.banco.modelo.entidades.Banco;
 import co.edu.uniquindio.banco.modelo.entidades.Usuario;
 import javafx.event.ActionEvent;
@@ -7,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -28,17 +29,10 @@ public class LoginControlador {
     @FXML
     private PasswordField txtPassword;
 
-    ///@FXML
-    ///void iniciarSesion(ActionEvent event) {
-
-    ///}
-
     private Banco banco;
 
-    
-
-    public LoginControlador(){
-        Banco banco = Banco.getInstance();
+    public LoginControlador() {
+        this.banco = BancoSingleton.getBanco();
     }
 
     @FXML
@@ -49,32 +43,23 @@ public class LoginControlador {
         Usuario usuario = banco.iniciarSesion(id, password);
 
         if (usuario != null) {
+            Sesion.getInstance().setUsuarioActual(usuario);
+
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/banco/vista/panelCliente.fxml"));
-                Parent root = loader.load();
+                // Cerramos la ventana actual
+                Stage stageActual = (Stage) txtId.getScene().getWindow();
+                stageActual.close();
 
-                PanelClienteControlador controlador = loader.getController();
-                controlador.setUsuario(usuario);
-
-                Stage stage = (Stage) txtId.getScene().getWindow();
-                stage.setScene(new Scene(root));
-                stage.show();
+                // Abrimos la ventana del panel del cliente
+                UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/panelCliente.fxml", "Banco - Panel Cliente");
 
             } catch (Exception e) {
-                e.printStackTrace();
+                UtilidadesVentana.mostrarError("Error al cargar ventana", "No se pudo cargar el panel del cliente.\n" + e.getMessage());
             }
+
         } else {
-            // Muestra una alerta de error
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error de inicio de sesión");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Usuario o contraseña incorrectos");
-            alerta.showAndWait();
+            UtilidadesVentana.mostrarAlerta("Inicio de sesión", "Credenciales incorrectas. Por favor, inténtalo de nuevo.");
         }
     }
-
-
-
-
-
 }
+

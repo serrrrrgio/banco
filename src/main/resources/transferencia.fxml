@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="center" prefHeight="358.0" prefWidth="474.0" spacing="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.banco.controlador.TransferenciaControlador">
    <children>
       <GridPane alignment="TOP_RIGHT" prefHeight="308.0" prefWidth="474.0">
@@ -37,7 +36,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="txtReceptor" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -47,7 +46,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="txtMonto" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -62,7 +61,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
+                  <Button fx:id="btnTransferir" mnemonicParsing="false" onAction="#realizarTransferencia" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
                </children>
             </HBox>
          </children>

@@ -11,4 +11,7 @@ module co.edu.uniquindio.banco {
 
     exports co.edu.uniquindio.banco.controlador;
     opens co.edu.uniquindio.banco.controlador to javafx.fxml;
+    exports co.edu.uniquindio.banco.modelo;
+    exports co.edu.uniquindio.banco.modelo.Singleton;
+    opens co.edu.uniquindio.banco.modelo to javafx.fxml;
 }
