@@ -35,10 +35,12 @@
             <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="740.0" GridPane.rowIndex="3">
                <children>
                   <Button fx:id="btnCerrarSesion" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #00796B;" text="Cerrar sesion" textFill="#fffdfd" />
-                  <Separator prefHeight="0.0" prefWidth="50.0" />
-                  <Button fx:id="btnConsultar" mnemonicParsing="false" onAction="#consultar" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #00796B;" text="Consultar" textFill="WHITE" />
-                  <Separator prefHeight="0.0" prefWidth="57.0" />
-                  <Button fx:id="btnTransferir" mnemonicParsing="false" onAction="#transferir" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
+                  <Separator prefHeight="3.0" prefWidth="50.0" />
+                  <Button fx:id="btnConsultar" mnemonicParsing="false" onAction="#consultar" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #00796B;" text="Consultar" textFill="WHITE" />
+                  <Separator prefHeight="1.0" prefWidth="50.0" />
+                  <Button fx:id="btnTransferir" mnemonicParsing="false" onAction="#transferir" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
+                  <Separator prefHeight="2.0" prefWidth="50.0" />
+                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizarDatos" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #00796B;" text="Actualizar" textFill="WHITE" />
                </children>
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">

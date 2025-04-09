@@ -36,7 +36,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtReceptor" />
+                  <TextField fx:id="txtBilleteraDestino" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -56,12 +56,12 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <ComboBox prefWidth="150.0" />
+                  <ComboBox fx:id="cbCategoria" prefWidth="150.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
                <children>
-                  <Button fx:id="btnTransferir" mnemonicParsing="false" onAction="#realizarTransferencia" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
+                  <Button fx:id="btnTransferir" mnemonicParsing="false" onAction="#transferir" prefHeight="39.0" prefWidth="122.0" style="-fx-background-color: #00796B;" text="Transferir" textFill="WHITE" />
                </children>
             </HBox>
          </children>
