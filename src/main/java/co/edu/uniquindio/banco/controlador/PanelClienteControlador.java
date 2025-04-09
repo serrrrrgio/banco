@@ -16,12 +16,6 @@ import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 
 
-
-/**
- * Clase que se encarga de gestionar las acciones de la interfaz gráfica del panel del cliente.
- * @author caflorezvi
- */
-
 public class PanelClienteControlador {
 
 
@@ -61,13 +55,13 @@ public class PanelClienteControlador {
         @FXML
         private Label lblBienvenido;
 
-    private Usuario usuario;
+        private Usuario usuario;
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-        Sesion.getInstance().setUsuarioActual(usuario);
-        mostrarDatosUsuario(usuario);
-    }
+        public void setUsuario(Usuario usuario) {
+            this.usuario = usuario;
+            Sesion.getInstance().setUsuarioActual(usuario);
+            mostrarDatosUsuario(usuario);
+        }
 
         public void mostrarDatosUsuario(Usuario usuario) {
             lblBienvenido.setText(usuario.getNombre() + ", bienvenido a su banco. Aquí podrá ver sus transacciones.");
@@ -113,7 +107,8 @@ public class PanelClienteControlador {
         }
 
         @FXML
-        public void actualizarDatos(ActionEvent actionEvent){
+        public void actualizar(ActionEvent actionEvent){
+            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/actualizarDatos.fxml", "Banco - Actualizar Datos");
 
         }
 
