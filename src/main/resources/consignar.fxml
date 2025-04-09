@@ -6,7 +6,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane alignment="CENTER_LEFT" prefHeight="361.0" prefWidth="600.0">
@@ -39,11 +38,6 @@
                   <TextField fx:id="txtMonto" />
                </children>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
-               <children>
-                  <Button fx:id="btnRecargar" mnemonicParsing="false" prefHeight="47.0" prefWidth="148.0" style="-fx-background-color: #00796B;" text="Recargar" textFill="WHITE" />
-               </children>
-            </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <ImageView fitHeight="102.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
@@ -53,6 +47,13 @@
                   </ImageView>
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="btnConsignar" mnemonicParsing="false" onAction="#consignarDinero" prefHeight="53.0" prefWidth="109.0" style="-fx-background-color: #00796B;" text="Consignar" textFill="WHITE" />
+                  <Separator prefHeight="0.0" prefWidth="113.0" />
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="53.0" prefWidth="109.0" style="-fx-background-color: #00796B;" text="Cancelar" textFill="WHITE" />
+               </children>
+            </HBox>
          </children>
       </GridPane>
    </children>
