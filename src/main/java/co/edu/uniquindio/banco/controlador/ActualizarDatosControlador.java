@@ -34,6 +34,19 @@ public class ActualizarDatosControlador {
         UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
         ((Stage) btnCancelar.getScene().getWindow()).close();
     }
+    @FXML
+    public void initialize() {
+    // Obtener el usuario actual desde la sesión
+    Usuario usuario = Sesion.getInstance().getUsuarioActual();
+
+    // Validar que haya un usuario activo
+    if (usuario != null) {
+        txtNombre.setText(usuario.getNombre());
+        txtCorreo.setText(usuario.getEmail());
+        txtDireccion.setText(usuario.getDireccion());
+        txtPassword.setText(usuario.getPassword());
+    }
+}
 
     @FXML
     public void guardarCambios(ActionEvent actionEvent){
