@@ -1,8 +1,6 @@
 package co.edu.uniquindio.banco.controlador;
-import co.edu.uniquindio.banco.controlador.UtilidadesVentana;
 import co.edu.uniquindio.banco.modelo.Singleton.BancoSingleton;
 import co.edu.uniquindio.banco.modelo.Singleton.Sesion;
-import co.edu.uniquindio.banco.modelo.entidades.Banco;
 import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
 import co.edu.uniquindio.banco.modelo.entidades.Usuario;
 import javafx.event.ActionEvent;
