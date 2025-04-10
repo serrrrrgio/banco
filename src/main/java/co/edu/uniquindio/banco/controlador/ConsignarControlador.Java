@@ -1,6 +1,15 @@
+package co.edu.uniquindio.banco.controlador;
+import co.edu.uniquindio.banco.controlador.UtilidadesVentana;
+import co.edu.uniquindio.banco.modelo.Singleton.BancoSingleton;
+import co.edu.uniquindio.banco.modelo.Singleton.Sesion;
+import co.edu.uniquindio.banco.modelo.entidades.Banco;
+import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
+import co.edu.uniquindio.banco.modelo.entidades.Usuario;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ConsignarControlador {
 
@@ -15,49 +24,50 @@ public class ConsignarControlador {
 
     @FXML
     public void cancelar (ActionEvent actionEvent){
-        UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente")
-        ((stage) btnCancelar.getScene.getWindow()).close()
+        UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
+        ((Stage) btnCancelar.getScene().getWindow()).close();
     }
 
     @FXML
-    public void consignarDinero(ActionEvent actionEvent){
-        String textoMonto = txtMonto.getText();
+    public void consignarDinero(ActionEvent actionEvent) {
+        try {
+            String textoMonto = txtMonto.getText();
 
-        if(textoMonto == null || textoMonto.isEmpty()){
-        UtilidadesVentana.mostrarError("Campo Vacio", "Por favor ingrese una monto");
-        return;
-        }
+            if (textoMonto == null || textoMonto.isEmpty()) {
+                UtilidadesVentana.mostrarError("Campo Vacío", "Por favor ingrese un monto");
+                return;
+            }
 
-        float Monto = Float.parseFloat(textoMonto);
+            float monto = Float.parseFloat(textoMonto);
 
-        if(monto <= 0){
-            UtilidadesVentana.mostrarError("Error", "El momto debe ser superior a cero, intente nuevamente");
-            return;
-        }
+            if (monto <= 0) {
+                UtilidadesVentana.mostrarError("Error", "El monto debe ser superior a cero, intente nuevamente");
+                return;
+            }
 
-        Usuario usuarioActual = sesion.getInstance().getUsuarioActual;
-        BilleteraVirtual billetera = BancoSingleton.getBanco().buscarBilletera(usuarioActual.getId())
+            Usuario usuarioActual = Sesion.getInstance().getUsuarioActual();
+            BilleteraVirtual billetera = BancoSingleton.getBanco().buscarBilletera(usuarioActual.getId());
 
-        if(billetera != null){
-            billetera.recargarSaldo(monto);
-            UtilidadesVentana.navegarVentana("Recarga exitosa", "Se han consignado $" + monto + "correctamente");
-            // Cerrar esta ventana (la de recarga)
-            ((Stage) txtMonto.getScene().getWindow()).close();
+            if (billetera != null) {
+                BancoSingleton.getBanco().recargarBilletera(billetera.getNumero(), monto);
+                UtilidadesVentana.mostrarAlerta("Recarga exitosa", "Se han consignado $" + monto + " correctamente");
+                ((Stage) txtMonto.getScene().getWindow()).close();
+            } else {
+                UtilidadesVentana.mostrarError("Error", "No se ha encontrado una billetera asociada con el Id.");
+            }
 
-        }else{
-            UtilidadesVentana.mostrarError("Error", "No se ha encontrado una billetera asociada con el Id")
-        }
 
         } catch (NumberFormatException e) {
-            // Capturar si el usuario ingresa letras o símbolos no válidos
+
             UtilidadesVentana.mostrarError("Formato inválido", "Ingresa un número válido para recargar.");
         } catch (Exception e) {
-            // Capturar cualquier otro error inesperado
+
             UtilidadesVentana.mostrarError("Error inesperado", "Ocurrió un error al realizar la recarga.");
             e.printStackTrace();
         }
-
-
-
     }
+
+
+
+}
 
