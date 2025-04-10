@@ -24,14 +24,14 @@ public class ConsignarControlador {
         String textoMonto = txtMonto.getText();
 
         if(textoMonto == null || textoMonto.isEmpty()){
-        UtilidadesVentana.navegarVentana("Campo Vacio", "Por favor ingrese una monto");
+        UtilidadesVentana.mostrarError("Campo Vacio", "Por favor ingrese una monto");
         return;
         }
 
         float Monto = Float.parseFloat(textoMonto);
 
         if(monto <= 0){
-            UtilidadesVentana.navegarVentana("Error", "El momto debe ser superior a cero, intente nuevamente");
+            UtilidadesVentana.mostrarError("Error", "El momto debe ser superior a cero, intente nuevamente");
             return;
         }
 
@@ -41,12 +41,11 @@ public class ConsignarControlador {
         if(billetera != null){
             billetera.recargarSaldo(monto);
             UtilidadesVentana.navegarVentana("Recarga exitosa", "Se han consignado $" + monto + "correctamente");
-            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente")
             // Cerrar esta ventana (la de recarga)
             ((Stage) txtMonto.getScene().getWindow()).close();
-            
+
         }else{
-            UtilidadesVentana.navegarVentana("Error", "No se ha encontrado una billetera asociada con el Id")
+            UtilidadesVentana.mostrarError("Error", "No se ha encontrado una billetera asociada con el Id")
         }
 
         } catch (NumberFormatException e) {
