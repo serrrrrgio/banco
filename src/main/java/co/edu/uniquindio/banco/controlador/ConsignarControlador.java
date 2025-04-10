@@ -22,7 +22,7 @@ public class ConsignarControlador {
 
     @FXML
     public void cancelar (ActionEvent actionEvent){
-        UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
+        UtilidadesVentana.navegarVentana("/PanelCliente.fxml", "Banco - Panel Cliente");
         ((Stage) btnCancelar.getScene().getWindow()).close();
     }
 

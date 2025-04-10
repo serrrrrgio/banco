@@ -18,7 +18,7 @@ public class ActualizarDatosControlador {
     private TextField txtDireccion;
 
     @FXML
-    private Button btnGuardarCambios;
+    private Button btnGuardar;
 
     @FXML
     private Button btnCancelar;
@@ -31,7 +31,7 @@ public class ActualizarDatosControlador {
 
     @FXML
     public void cancelar(ActionEvent actionEvent){
-        UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
+        UtilidadesVentana.navegarVentana("/PanelCliente.fxml", "Banco - Panel Cliente");
         ((Stage) btnCancelar.getScene().getWindow()).close();
     }
     @FXML
@@ -78,7 +78,7 @@ public class ActualizarDatosControlador {
 
         UtilidadesVentana.mostrarAlerta("Datos actualizados", "Tus datos han sido actualizados correctamente.");
 
-        Stage stage = (Stage) btnGuardarCambios.getScene().getWindow();
+        Stage stage = (Stage) btnGuardar.getScene().getWindow();
         stage.close();
 
         UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");

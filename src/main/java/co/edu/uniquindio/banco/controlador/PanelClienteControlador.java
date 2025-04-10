@@ -1,5 +1,6 @@
 package co.edu.uniquindio.banco.controlador;
 
+import co.edu.uniquindio.banco.modelo.entidades.Banco;
 import co.edu.uniquindio.banco.modelo.entidades.BilleteraVirtual;
 import co.edu.uniquindio.banco.modelo.entidades.Usuario;
 import co.edu.uniquindio.banco.modelo.Singleton.BancoSingleton;
@@ -55,7 +56,10 @@ public class PanelClienteControlador {
         @FXML
         private Label lblBienvenido;
 
+
+
         private Usuario usuario;
+        private Banco banco;
 
         public void setUsuario(Usuario usuario) {
             this.usuario = usuario;
@@ -71,7 +75,7 @@ public class PanelClienteControlador {
         @FXML
         public void cerrarSesion(ActionEvent actionEvent) {
             Sesion.getInstance().cerrarSesion();
-            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/login.fxml", "Banco - Iniciar Sesión");
+            UtilidadesVentana.navegarVentana("/login.fxml", "Banco - Iniciar Sesión");
             ((Stage) btnCerrarSesion.getScene().getWindow()).close();
         }
 
@@ -98,17 +102,17 @@ public class PanelClienteControlador {
         
         @FXML
         public void recargarSaldo(ActionEvent actionEvent){
-            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/consignar.fxml", "Banco - Recarga");
+            UtilidadesVentana.navegarVentana("/consignar.fxml", "Banco - Recarga");
         }
 
         @FXML
         public void transferir(ActionEvent actionEvent) {
-            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/transferencia.fxml", "Banco - Transferencia");
+            UtilidadesVentana.navegarVentana("/transferencia.fxml", "Banco - Transferencia");
         }
 
         @FXML
         public void actualizar(ActionEvent actionEvent){
-            UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/actualizarDatos.fxml", "Banco - Actualizar Datos");
+            UtilidadesVentana.navegarVentana("/actualizarDatos.fxml", "Banco - Actualizar Datos");
 
         }
 

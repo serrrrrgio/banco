@@ -29,11 +29,11 @@ public class LoginControlador {
     @FXML
     private TextField txtPassword;
 
-    private Banco banco;
+    private Banco banco = BancoSingleton.getBanco();
 
-    public LoginControlador() {
-        this.banco = BancoSingleton.getBanco();
-    }
+
+
+
 
     @FXML
     public void iniciarSesion(ActionEvent actionEvent) {
@@ -46,12 +46,25 @@ public class LoginControlador {
             Sesion.getInstance().setUsuarioActual(usuario);
 
             try {
-                // Cerramos la ventana actual
+                // Cerrar la ventana actual
                 Stage stageActual = (Stage) txtId.getScene().getWindow();
                 stageActual.close();
 
-                // Abrimos la ventana del panel del cliente
-                UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/panelCliente.fxml", "Banco - Panel Cliente");
+                // Cargar el FXML manualmente
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/panelCliente.fxml"));
+                Parent root = loader.load();
+
+                // Obtener el controlador
+                PanelClienteControlador controlador = loader.getController();
+
+                // Pasarle el usuario
+                controlador.mostrarDatosUsuario(usuario);
+
+                // Mostrar la nueva ventana
+                Stage stage = new Stage();
+                stage.setTitle("Banco - Panel Cliente");
+                stage.setScene(new Scene(root));
+                stage.show();
 
             } catch (Exception e) {
                 UtilidadesVentana.mostrarError("Error al cargar ventana", "No se pudo cargar el panel del cliente.\n" + e.getMessage());
@@ -61,5 +74,6 @@ public class LoginControlador {
             UtilidadesVentana.mostrarAlerta("Inicio de sesión", "Credenciales incorrectas. Por favor, inténtalo de nuevo.");
         }
     }
+
 }
 
