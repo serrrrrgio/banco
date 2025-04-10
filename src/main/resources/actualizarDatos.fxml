@@ -61,12 +61,12 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="btnGuardar" mnemonicParsing="false" style="-fx-background-color: #00796B;" text="Guardar" textFill="WHITE" />
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarCambios" style="-fx-background-color: #00796B;" text="Guardar Cambios" textFill="WHITE" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="btnCancelar" mnemonicParsing="false" style="-fx-background-color: #00796B;" text="Cancelar" textFill="WHITE" />
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #00796B;" text="Cancelar" textFill="WHITE" />
                </children>
             </VBox>
          </children>
