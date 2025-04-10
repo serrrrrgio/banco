@@ -35,7 +35,7 @@
                         <Font name="Segoe UI Emoji" size="17.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="txtId" />
                </children>
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -45,7 +45,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="txtPassword" />
                </children>
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">

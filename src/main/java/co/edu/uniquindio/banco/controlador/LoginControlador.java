@@ -36,7 +36,7 @@ public class LoginControlador {
     }
 
     @FXML
-    public void iniciarSesion(ActionEvent event) {
+    public void iniciarSesion(ActionEvent actionEvent) {
         String id = txtId.getText();
         String password = txtPassword.getText();
 
