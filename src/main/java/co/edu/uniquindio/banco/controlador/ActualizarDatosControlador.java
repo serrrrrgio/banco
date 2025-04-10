@@ -30,6 +30,20 @@ public class ActualizarDatosControlador {
     private PasswordField txtPassword;
 
     @FXML
+    public void inicializarCampos(){
+        Usuario usuario = Sesion.getInstance().getUsuarioActual();
+
+        if(usuario != null){
+            txtNombre.setText(usuario.getNombre());
+            txtCorreo.setText(usuario.getEmail());
+            txtDireccion.setText(usuario.getDireccion());
+            txtPassword.setText(usuario.getPassword());
+        } else {
+            UtilidadesVentana.mostrarError("Error de sesión", "No se pudo cargar la información del usuario.");
+        }
+    }
+
+    @FXML
     public void cancelar(ActionEvent actionEvent){
         UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
         ((Stage) btnCancelar.getScene().getWindow()).close();
@@ -51,7 +65,7 @@ public class ActualizarDatosControlador {
     @FXML
     public void guardarCambios(ActionEvent actionEvent){
         try {
-        // Obtener el usuario actual desde la sesión
+
         Usuario usuario = Sesion.getInstance().getUsuarioActual();
 
         if (usuario == null) {
@@ -59,19 +73,18 @@ public class ActualizarDatosControlador {
             return;
         }
 
-        // Obtener datos de los campos
+
         String nombre = txtNombre.getText().trim();
         String correo = txtCorreo.getText().trim();
         String direccion = txtDireccion.getText().trim();
         String password = txtPassword.getText().trim();
 
-        // Validar que no estén vacíos
+
         if (nombre.isEmpty() || correo.isEmpty() || direccion.isEmpty() || password.isEmpty()) {
             UtilidadesVentana.mostrarError("Campos vacíos", "Todos los campos deben estar llenos.");
             return;
         }
 
-        // Actualizar los datos del usuario
         usuario.setNombre(nombre);
         usuario.setEmail(correo);
         usuario.setDireccion(direccion);
@@ -79,11 +92,9 @@ public class ActualizarDatosControlador {
 
         UtilidadesVentana.mostrarAlerta("Datos actualizados", "Tus datos han sido actualizados correctamente.");
 
-        // Cerrar la ventana actual
         Stage stage = (Stage) btnGuardarCambios.getScene().getWindow();
         stage.close();
 
-        // Volver al panel cliente
         UtilidadesVentana.navegarVentana("/co/edu/uniquindio/banco/vista/PanelCliente.fxml", "Banco - Panel Cliente");
 
     } catch (Exception e) {
