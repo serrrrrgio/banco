@@ -49,7 +49,7 @@ public class ConsignarControlador {
             BilleteraVirtual billetera = BancoSingleton.getBanco().buscarBilletera(usuarioActual.getId());
 
             if (billetera != null) {
-                BancoSingleton.getBanco().recargarBilletera(billetera.getNumero(), monto);
+                BancoSingleton.getBanco().recargarBilletera(BancoSingleton.getBanco().buscarBilleteraUsuario(usuarioActual.getId()).getNumero(), monto);
                 UtilidadesVentana.mostrarAlerta("Recarga exitosa", "Se han consignado $" + monto + " correctamente");
                 ((Stage) txtMonto.getScene().getWindow()).close();
             } else {
