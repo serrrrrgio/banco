@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 /**
  * Clase que representa el controlador de la vista de login
- * @author caflorezvi
+ * @author Michael Joel Alvarez, Sergio Posada Garcia.
  */
 public class LoginControlador {
 
@@ -30,10 +30,6 @@ public class LoginControlador {
     private TextField txtPassword;
 
     private Banco banco = BancoSingleton.getBanco();
-
-
-
-
 
     @FXML
     public void iniciarSesion(ActionEvent actionEvent) {
