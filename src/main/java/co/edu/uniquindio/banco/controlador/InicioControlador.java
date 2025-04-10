@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 /**
  * Clase que representa el controlador de la vista Inicio
- * @author caflorezvi
+ * @author Michael Alvarez, Sergio Posada.
  */
 
 public class InicioControlador {

@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 /**
  * Clase que representa el controlador de la ventana de registro de usuario
- * @author caflorezvi
+ * @author Michael Alvarez, Sergio Posada
  */
 public class RegistroControlador {
 

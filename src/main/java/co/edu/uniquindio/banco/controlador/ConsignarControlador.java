@@ -9,7 +9,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * Clase que representa el controlador de la vista de consignar
+ * @author Michael Alvarez, Sergio Posada.
+ */
 public class ConsignarControlador {
 
     @FXML

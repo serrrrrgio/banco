@@ -56,7 +56,10 @@ public class PanelClienteControlador {
         @FXML
         private Label lblBienvenido;
 
-
+    /**
+ * Clase que representa el controlador de la vista de panel de usuario.
+ * @author Michael Alvarez, Sergio Posada.
+ */
 
         private Usuario usuario;
         private Banco banco;
