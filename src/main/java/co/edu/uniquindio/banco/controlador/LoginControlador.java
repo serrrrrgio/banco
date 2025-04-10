@@ -27,7 +27,7 @@ public class LoginControlador {
     private TextField txtId;
 
     @FXML
-    private PasswordField txtPassword;
+    private TextField txtPassword;
 
     private Banco banco;
 

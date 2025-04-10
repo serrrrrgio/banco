@@ -1,16 +1,26 @@
 package co.edu.uniquindio.banco.controlador;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.stage.Stage;
 
 /**
  * Clase que representa el controlador de la vista Inicio
  * @author caflorezvi
  */
+
 public class InicioControlador {
+    @FXML
+    private Button btnIniciarSesion;
+
+    @FXML
+    private Button btnRegistrarse;
+
 
     /**
      * Método que permite ir a la vista de Iniciar Sesión
