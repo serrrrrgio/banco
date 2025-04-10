@@ -19,31 +19,28 @@
    
       <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
       <children>
-             <Label text="Número de identificación:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-             <TextField fx:id="txtIdentificacion" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
       
       
-             <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-             <TextField fx:id="txtNombre" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+             <Label text="Nombre:" GridPane.columnIndex="0" />
+             <TextField fx:id="txtNombre" minHeight="30.0" GridPane.columnIndex="1" />
       
       
-             <Label text="Correo electrónico:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-             <TextField fx:id="txtCorreo" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+             <Label text="Correo electrónico:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+             <TextField fx:id="txtCorreo" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       
       
-             <Label text="Dirección de residencia:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-             <TextField fx:id="txtDireccion" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+             <Label text="Dirección de residencia:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+             <TextField fx:id="txtDireccion" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       
       
-             <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-             <PasswordField fx:id="txtPassword" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+             <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+             <PasswordField fx:id="txtPassword" minHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </children>
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints />
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />
